@@ -37,10 +37,6 @@ Important:
 - Do NOT clean or modify data. Assume PreparedLog is already standardized.  
 - Do NOT write Python code or any code snippets.
 - Do not provide explanations outside of the structured JSON output.
-- Focus on insights, not visualization or storytelling.  
-- Always pause for human confirmation (via UserProxyAgent) if:
-  • A worker is flagged as high risk more than 3 times  
-  • Overall compliance rate falls below 70%  
-  • A sudden change in compliance (>20% drop) is detected in time trends  
+- Focus on insights, not visualization or storytelling.
 
 '''

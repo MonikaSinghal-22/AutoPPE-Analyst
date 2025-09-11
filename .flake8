@@ -1,0 +1,2 @@
+[flake8]
+exclude = .env,venv,.venv,__pycache__,*.pyc,*.pyo,.git,.github, autogen_env,prompts,config

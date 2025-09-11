@@ -54,3 +54,38 @@ Agents run in the following order:
 DataPreparer → Analyst → Reporter → UserProxy
 
 The UserProxyAgent reviews the final report for approval.
+---
+
+## Project Architecture
+
+The system is modular, with agents collaborating to process, analyze, and report on PPE logs. See `architecture.excalidraw` for a visual overview.
+
+## Directory Structure
+
+```
+AutoPPE-Analyst/
+├── main.py                # Main entry point
+├── requirements.txt       # Python dependencies
+├── agents/                # Agent scripts (analyst, data preparer, reporter, user proxy)
+├── config/                # Configuration files
+├── models/                # Model client code
+├── prompts/               # Prompt templates for agents
+├── schemas/               # Data schemas
+├── teams/                 # Team-related modules
+├── ppe_log_sample.csv     # Sample PPE log data
+├── LICENSE                # License information
+├── architecture.excalidraw # Architecture diagram
+├── response.lua           # Lua script
+```
+
+## Sample Data
+
+The repository includes `ppe_log_sample.csv` for testing and demonstration purposes.
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for improvements or bug fixes.
+
+## License
+
+This project is licensed under the terms of the license found in the `LICENSE` file.

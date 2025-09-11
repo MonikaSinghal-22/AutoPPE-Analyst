@@ -1,1 +1,1 @@
-MODEL_GEMINI = 'gemini-1.5-flash-8b'
+MODEL_GEMINI = 'gemini-2.5-pro'

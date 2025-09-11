@@ -9,15 +9,21 @@ from agents.user_proxy_agent import getUserProxyAgent
 # from schemas.analysis_report import AnalysisReport
 # from schemas.report_summary import ReportSummary
 
-def getDocumentIntelligenceTeam(model_client):
+
+def getDocumentIntelligenceTeam(model_client, input_func=None):
     data_preparer_agent = getDataPreparerAgent(model_client)
     analyst_agent = getAnalystAgent(model_client)
     reporter_agent = getReporterAgent(model_client)
-    user_proxy_agent = getUserProxyAgent(model_client)
+    #user_proxy_agent = getUserProxyAgent(model_client, input_func=input_func)
     text_mention_termination = TextMentionTermination('STOP')
-    
+
     team = RoundRobinGroupChat(
-        participants=[data_preparer_agent, analyst_agent, reporter_agent, user_proxy_agent],
+        participants=[
+            data_preparer_agent,
+            analyst_agent,
+            reporter_agent,
+            #user_proxy_agent
+        ],
         max_turns=4,
         termination_condition=text_mention_termination,
         # custom_message_types = [

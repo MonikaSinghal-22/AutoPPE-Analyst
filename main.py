@@ -4,14 +4,15 @@ from dotenv import load_dotenv
 from models.model_client import get_model_client
 from teams.document_intelligence import getDocumentIntelligenceTeam
 
+
 load_dotenv()
 
+
 async def main():
-    
     gemini_model_client = get_model_client()
 
     team = getDocumentIntelligenceTeam(gemini_model_client)
-    
+
     task = '''
     Process the csv data for PPE log analysis
     timestamp,worker_id,ppe_item,status,severity,location
@@ -37,14 +38,14 @@ async def main():
     8/29/2025 11:05,W107,Goggles,Non-Compliant,Low,Meltshop
 
     '''
-    
+
     try:
         async for message in team.run_stream(task=task):
-            print(message)
-           
+            print(message.source)
+            print(message.content)
+
     except Exception as e:
         print(e)
 
-        
 if (__name__ == "__main__"):
     asyncio.run(main())
