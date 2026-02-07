@@ -2,6 +2,6 @@ autogen-agentchat
 autogen-core
 autogen-ext
 asyncio
-dotenv
+python-dotenv
 streamlit
 autogen-ext[openai]

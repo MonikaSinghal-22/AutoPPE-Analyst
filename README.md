@@ -1,6 +1,7 @@
 # AutoPPE-Analyst
-Auto-analysis of PPE logs using multiple agents with human oversight built using **Microsoft AutoGen’s framework**.  
-It automates data cleaning, analysis, and report generation, while allowing a human supervisor to review and approve final outputs.
+
+Auto-analysis of PPE logs using multiple agents built using **Microsoft AutoGen's framework**.  
+It automates data cleaning, analysis, and report generation.
 
 ---
 
@@ -18,10 +19,6 @@ It automates data cleaning, analysis, and report generation, while allowing a hu
 - **Stakeholder-ready Reports**
   - Generates executive summaries, key findings, and actionable recommendations.
   - Includes visualizations and contextual insights.
-
-- **Human-in-the-loop**
-  - `UserProxyAgent` reviews and approves the final report.
-  - Ensures accountability and reduces the risk of automated errors.
 
 ---
 
@@ -51,32 +48,14 @@ python main.py
 ```
 
 Agents run in the following order:
-DataPreparer → Analyst → Reporter → UserProxy
+DataPreparer → Analyst → Reporter
 
-The UserProxyAgent reviews the final report for approval.
 ---
 
 ## Project Architecture
 
 The system is modular, with agents collaborating to process, analyze, and report on PPE logs. See `architecture.excalidraw` for a visual overview.
 
-## Directory Structure
-
-```
-AutoPPE-Analyst/
-├── main.py                # Main entry point
-├── requirements.txt       # Python dependencies
-├── agents/                # Agent scripts (analyst, data preparer, reporter, user proxy)
-├── config/                # Configuration files
-├── models/                # Model client code
-├── prompts/               # Prompt templates for agents
-├── schemas/               # Data schemas
-├── teams/                 # Team-related modules
-├── ppe_log_sample.csv     # Sample PPE log data
-├── LICENSE                # License information
-├── architecture.excalidraw # Architecture diagram
-├── response.lua           # Lua script
-```
 
 ## Sample Data
 
